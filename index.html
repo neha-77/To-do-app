@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+      <ul>
+        <li class="sidebar-item" onclick="filterTasks('all')">All Tasks</li>
+        <li class="sidebar-item" onclick="filterTasks('today')">Today</li>
+        <li class="sidebar-item" onclick="filterTasks('tomorrow')">Tomorrow</li>
+        <li class="sidebar-item" onclick="filterTasks('week')">This Week</li>
+        <li class="sidebar-item" onclick="filterTasks('priority')">Priority</li>
+        <li class="sidebar-item" onclick="filterTasks('completed')">Completed</li>
+      </ul>
+
+      <div class="tags">
+        <h3>Tags</h3>
+        <ul>
+          <li class="sidebar-item" onclick="filterByTag('Work')">Work</li>
+          <li class="sidebar-item" onclick="filterByTag('Personal')">Personal</li>
+          <li class="sidebar-item" onclick="filterByTag('Urgent')">Urgent</li>
+          <li class="sidebar-item" onclick="filterByTag('Study')">Study</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Task Section -->
+    <div class="main-content">
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" id="search-bar" placeholder="Search tasks..." onkeyup="searchTasks()"/>
+      </div>
+
+      <!-- Task List -->
+      <div class="task-list" id="task-list">
+        <!-- Dynamic Tasks will go here -->
+      </div>
+    </div>
+
+    <!-- Right Panel (Task Details/Editing) -->
+    <div class="right-panel">
+      <h2>Task Details</h2>
+      <form id="task-form">
+        <label for="task-name">Task Name:</label>
+        <input type="text" id="task-name" name="task-name" placeholder="Enter task name">
+        
+        <label for="task-description">Description:</label>
+        <textarea id="task-description" name="task-description" placeholder="Enter task description"></textarea>
+
+        <label for="priority">Priority:</label>
+        <select id="priority" name="priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <label for="due-date">Due Date:</label>
+        <input type="date" id="due-date" name="due-date">
+
+        <label for="tags">Tags:</label>
+        <select id="tags" name="tags">
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Urgent">Urgent</option>
+          <option value="Study">Study</option>
+        </select>
+
+        <button type="button" class="add-task-btn" onclick="addTask()">Add Task</button>
+      </form>
+    </div>
+  </div>
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
+
