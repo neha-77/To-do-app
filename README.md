@@ -26,3 +26,5 @@ Responsive layout and clean design using Tailwind CSS
 
 ![image](https://github.com/user-attachments/assets/973be263-e464-4a81-b4d4-aa053626afa0)
 
+Author:
+This project was created by Neha Raichur as part of personal learning and frontend development practice.
